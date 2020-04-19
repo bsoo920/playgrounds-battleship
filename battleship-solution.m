@@ -1,4 +1,3 @@
-    //      previous score: ~56
     let stepSize = 4
     var offset = 0
     var keyTile = Tile()
