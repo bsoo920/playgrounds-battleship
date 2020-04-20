@@ -1,7 +1,7 @@
 ## My 56-turn-average solution to Swift Playgrounds' Battleship challenge
 <img src='https://i.imgur.com/AoDYf7B.gif' title='44-turn game' width='' alt='gif of a 44-turn game' />
 
-### Background
+## Background
 Apple Swift Playgrounds' Battleship challege \[[1](#notes)\] comes pre-loaded with three solutions of varying complexity and performance (number of turns needed to finish game on average).  Here's a comparison:
 
 Solution    | Average turns per game | # lines of code \[[2](#notes)\]
@@ -11,7 +11,7 @@ pre-loaded _Locatig Ships_        | 69 | 30
 pre-loaded _An Example Algorithm_ | 62 | 95
 **_My Solution_**        | **_56_** | **_68_**
 
-### Concept of my solution
+## Concept of my solution
 In this write-up, I will use the term _hit_ and _fire at_ interchangeably, e.g. hitting a tile or firing at a tile.  When I refer to _a ship being "hit"_ I will put quotes around **_"hit"_**.
 
 The concept is fairly simple:
@@ -24,7 +24,7 @@ Note that this simple yet efficient strategic does not involve any of the follow
 - probability calculation
 - randomizing what tiles to hit
 
-#### 1. Efficiently Scan the grid for long ships
+### 1. Efficiently Scan the grid for long ships
 I've chosen to start scanning by firing at every 5th tile, i.e. skipping 3 tiles after each firing.  **This guarantees that all 4- and 5-tile ships will sustain "hits" and therefore be identified.**
 
 <img src='https://i.imgur.com/FEiS2jg.png' title='26-turn scan' width='' alt='image of a 26-turn scan' />
@@ -35,7 +35,7 @@ You will notice the above took 26 turns.  There are a 100 tiles total, and I am 
 
 Conceptually, this scan is more efficient because at the corners it's taking advantage of the grid boundaries to "corner" any ship that might be there.
 
-#### 2. "Star Search" - fire at neighboring tiles in all directions
+### 2. "Star Search" - fire at neighboring tiles in all directions
 Whenever a scanned tile is a "hit", I proceed to scan its neighboring tiles in a "+" pattern (I call this "Star Search" in the code).  Below screenshot shows two examples of this Star Search starting at the tiles highlighted with red squares:
 
 <img src='https://i.imgur.com/skbSUqX.png' title='star search scan' width='' alt='image of a star search scan' />
@@ -52,7 +52,7 @@ And here is the next Star Search from the initial grid scan (#1).  (Please ignor
 
 Oftem times the game will be finished before you get to #3!  But if not...
 
-#### 3. Scan again for smaller ships
+### 3. Scan again for smaller ships
 This is actually the same scan as #1 but offset by two tiles.  This complements #1, and together they effectively become an every-other-tile scan of the grid, which guarantees "hitting" _all_ ships.  Conceptually this is what the second scan looks like (shown mid-progress to illustrate):
 
 <img src='https://i.imgur.com/wRVCEE5.png' title='second grid scan' width='' alt='image of second grid scan' />
@@ -61,7 +61,7 @@ Whenever a "hit" occurs, #2 is applied.
 
 These three steps will find and "hit" all ships, often under 50 turns!
 
-### Actual code execution
+## Actual code execution
 The code executes the steps in a different order, but adhering to the same concept.  It basically performs #1 but also #2 each time a ship is "hit".  (When Star Search encounters a new "hit", the new "hit" does not start another Star Search.)  When it finishes a Star Search, it proceeds to the next tile of the scan.
 
 When scanning encounters a tile that is already "hit" (from a previous Star Search), it will perform another Star Search from there.
