@@ -2,12 +2,12 @@
 <img src='https://i.imgur.com/AoDYf7B.gif' title='44-turn game' width='' alt='gif of a 44-turn game' />
 
 ## Background
-Apple Swift Playgrounds' Battleship challege \[[1](#notes)\] comes pre-loaded with three solutions of varying complexity and performance (number of turns needed to finish game on average).  Here's a comparison:
+Apple Swift Playgrounds' Battleship challenge \[[1](#notes)\] comes pre-loaded with three solutions of varying complexity and performance (number of turns needed to finish game on average).  Here's a comparison:
 
 Solution    | Average turns per game | # lines of code \[[2](#notes)\]
 ---------------------- | --- | ---
 pre-loaded _Sinking a Ship_       | 92 | 13
-pre-loaded _Locatig Ships_        | 69 | 30
+pre-loaded _Locating Ships_        | 69 | 30
 pre-loaded _An Example Algorithm_ | 62 | 95
 **_My Solution_**        | **_56_** | **_68_**
 
