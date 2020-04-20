@@ -68,6 +68,8 @@ When scanning encounters a tile that is already "hit" (from a previous Star Sear
 
 If the initial scan #1 finishes and the game is still at play, then it proceeds to #3, again performing a Star Search each time it "hits" a ship during scanning.
 
+<img src='https://i.imgur.com/en95goZ.gif' title='56-turn game' width='' alt='gif of a 56-turn game' />
+
 ##### Notes
 1. It's really Apple Swift Playgrounds' Battleship **_Playground_**, but, really?
 2. Excludes comments and blank lines.
