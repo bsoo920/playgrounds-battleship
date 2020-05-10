@@ -27,7 +27,7 @@ Note that this simple yet efficient strategic does not involve any of the follow
 ### 1. Efficiently Scan the grid for long ships
 I've chosen to start scanning by firing at every 5th tile, i.e. skipping 3 tiles after each firing.  **This guarantees that all 4- and 5-tile ships will sustain "hits" and therefore be identified.**
 
-<img src='https://i.imgur.com/FEiS2jg.png' title='26-turn scan' width='' alt='image of a 26-turn scan' />
+<img src='https://i.imgur.com/lKuYQL5.png' title='26-turn scan' width='' alt='image of a 26-turn scan' />
 
 You will notice the above took 26 turns.  There are a 100 tiles total, and I am hitting 1 out of every 4 tiles (after a hit, I skip the next 3).  So you'd think only 25 tiles will be hit after this scan.  As it turns out, there are several possible configurations of this scan pattern.  Here's what I found to require only 24 turns, and thus the most efficient 1-out-of-every-4-tile scan:
 
