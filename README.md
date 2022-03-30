@@ -11,6 +11,8 @@ pre-loaded _Locating Ships_        | 69 | 30
 pre-loaded _An Example Algorithm_ | 62 | 95
 **_My Solution_**        | **_56_** | **_68_**
 
+So compared to Apple's best pre-loaded solution _An Example Algorithm_, mine is 11% faster (56 vs 62) with 28% less code (68 vs 95).  It's _simpler_ too :)
+
 ## Concept of my solution
 In this write-up, I will use the term _hit_ and _fire at_ interchangeably, e.g. hitting a tile or firing at a tile.  When I refer to _a ship being "hit"_ I will put quotes around **_"hit"_**.
 
